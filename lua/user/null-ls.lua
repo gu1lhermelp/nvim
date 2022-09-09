@@ -1,4 +1,4 @@
-local null_ls_status_ok, null_ls = require(pcall, "null-ls")
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
     return
 end
@@ -11,5 +11,7 @@ null_ls.setup({
     sources = {
         formatting.clang_format,
         diagnostics.cppcheck,
+        formatting.prettier,
+        diagnostics.eslint,
     }
 })

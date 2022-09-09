@@ -17,7 +17,6 @@ vim.g.maplocalleader = " "
 --  term_mode = "t",
 --  command_mode = "c",
 
-
 -- Normal
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
@@ -25,6 +24,11 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
+
+keymap("n", "<leader>b", ":BufferLinePick<cr>", opts)
+keymap("n", "<leader>c", ":BufferLinePickClose<cr>", opts)
+keymap("n", "<c-left>", ":BufferLineCyclePrev<cr>", opts)
+keymap("n", "<c-right>", ":BufferLineCycleNext<cr>", opts)
 
 -- Visual
 keymap("v", "p", '"_dP', opts)

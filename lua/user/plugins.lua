@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
     use "akinsho/toggleterm.nvim"
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use {'lewis6991/gitsigns.nvim'}
 
     -- Colorscheme
     use "Mofiqul/dracula.nvim"
@@ -30,16 +32,14 @@ return require('packer').startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig"
     use "jose-elias-alvarez/null-ls.nvim"
-    
+
     -- Telescope
     use "nvim-telescope/telescope.nvim"
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",}
- 
+
     -- Nvim-tree
     use "kyazdani42/nvim-tree.lua"
     use "kyazdani42/nvim-web-devicons"
-
-    
 end)
