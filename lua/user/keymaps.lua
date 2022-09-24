@@ -19,8 +19,10 @@ vim.g.maplocalleader = " "
 
 -- Normal
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>/", ":NvimTreeFindFile<cr>", opts)
 
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
@@ -29,6 +31,25 @@ keymap("n", "<leader>b", ":BufferLinePick<cr>", opts)
 keymap("n", "<leader>c", ":BufferLinePickClose<cr>", opts)
 keymap("n", "<c-left>", ":BufferLineCyclePrev<cr>", opts)
 keymap("n", "<c-right>", ":BufferLineCycleNext<cr>", opts)
+
+keymap("n", "<leader>,", ":BufferLineCloseLeft<cr>", opts)
+keymap("n", "<leader>.", ":BufferLineCloseRight<cr>", opts)
+
+keymap("n", "<leader>s", ":split<cr>", opts)
+keymap("n", "<leader>v", ":vsplit<cr>", opts)
+
+keymap("n", "<leader>r", ":set relativenumber<cr>", opts)
+keymap("n", "<leader>n", ":set norelativenumber<cr>", opts)
+
+keymap("n", "<leader>h", ":ClangdSwitchSourceHeader<cr>", opts)
+
+function toogleRelativeLineNumber()
+    if vim.opt.relativenumber == false then
+        vim.opt.relativenumber = true
+    else
+        vim.opt.relativenumber = false
+    end
+end
 
 -- Visual
 keymap("v", "p", '"_dP', opts)
