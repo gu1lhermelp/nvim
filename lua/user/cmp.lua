@@ -1,9 +1,19 @@
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
-require('luasnip.loaders.from_vscode').lazy_load()
+local status_ok, luasnip_loader = pcall(require, "luasnip.loaders.from_vscode")
+if status_ok then
+    require('luasnip.loaders.from_vscode').lazy_load()
+end
 
-local cmp = require('cmp')
-local luasnip = require('luasnip')
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
+    return
+end
+
+local luasnip_status_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_status_ok then
+    return
+end
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
 

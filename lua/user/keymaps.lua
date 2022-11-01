@@ -23,9 +23,9 @@ keymap("n", "<leader>/", ":NvimTreeFindFile<cr>", opts)
 
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", opts)
 
-keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<cr>", opts)
 
 keymap("n", "<leader>b", ":BufferLinePick<cr>", opts)
 keymap("n", "<leader>c", ":BufferLinePickClose<cr>", opts)
