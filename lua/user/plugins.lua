@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
     use "akinsho/toggleterm.nvim"
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
     use {'lewis6991/gitsigns.nvim'}
 
     -- Colorscheme
