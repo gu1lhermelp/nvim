@@ -27,4 +27,12 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
-vim.cmd[[colorscheme slate]]
+-- Other
+vim.o.undofile = true
+
+-- Treesitter folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+
+vim.cmd[[colorscheme kanagawa-wave]]

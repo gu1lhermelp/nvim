@@ -10,6 +10,8 @@ return {
 		local sources = {
             formatting.clang_format,
 			formatting.stylua,
+            formatting.black,
+            formatting.cmake_format,
 		}
 		null_ls.setup({
 			sources = sources,
