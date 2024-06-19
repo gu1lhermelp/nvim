@@ -44,7 +44,19 @@ return {
                 o = { "<cmd>DiffviewOpen --selected-file=%<cr>", "Open diff against current index" },
                 h = { "<cmd>DiffviewFileHistory %<cr>", "Open current file history" },
                 c = { "<cmd>DiffviewClose<cr>", "Close diffview" },
-            }
+            },
+
+            g = {
+                s = { ":lua require('gitlab').summary()<cr>" , "Open MR summary." },
+                r = { ":lua require('gitlab').review()<cr>" , "Start MR review." },
+                td = { ":lua require('gitlab').toggle_discussions()<cr>" , "Toggle discussions panel."},
+                d = { ":lua require('gitlab').toggle_draft_mode()<cr>" , "Toggle between draft and live mode."},
+                pd = { ":lua require('gitlab').publish_all_drafts()<cr>" , "Publishes all unpublished draft notes."},
+                c = { ":lua require('gitlab').create_comment()<cr>" , "Create comment on the current line."},
+                mc = { ":lua require('gitlab').create_multiline_comment()<cr>" , "Create multi-line comment."},
+                cs = { ":lua require('gitlab').comment_suggestion()<cr>" , "Create a comment suggestion."},
+                n = { ":lua require('gitlab').create_note()<cr>" , "Add general comment not related to code." },
+            },
 
         }
 
@@ -55,7 +67,7 @@ return {
 			-- Lsp Stuffs
 			g = {
 				name = "LSP",
-				i = { ":LspInfo<cr>", "Connected Language Servers" },
+				-- i = { ":LspInfo<cr>", "Connected Language Servers" },
 				k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover Commands" },
 				K = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 				w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
@@ -72,14 +84,19 @@ return {
 				D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
 				r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 				R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+				o = { "<cmd>lua vim.lsp.buf.outgoing_calls()<cr>", "Outgoing Calls" },
+				i = { "<cmd>lua vim.lsp.buf.incoming_calls()<cr>", "Incoming Calls" },
 				a = { "<cmd>lua vim.lsp.buf.code_action({apply = true})<cr>", "Code Action" },
 				A = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 				-- e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show Line Diagnostics" },
 				f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
 			},
 
-            ["<F2>"] = {"<cmd>DapToggleBreakpoint<cr>", "DAP Toggle Breakpoint"},
-            ["<F5>"] = {"<cmd>DapContinue<cr>", "DAP Continue"},
+            -- ["<F2>"] = {"<cmd>DapToggleBreakpoint<cr>", "DAP Toggle Breakpoint"},
+            -- ["<F5>"] = {"<cmd>DapContinue<cr>", "DAP Continue"},
+            ["<F2>"] = {"<cmd>LspInfo<cr>", "LSP Info"},
+            ["<F3>"] = {"<cmd>LspStart<cr>", "LSP Start"},
+            ["<F5>"] = {"<cmd>LspRestart<cr>", "LSP Restart"},
             ["<F6>"] = {"<cmd>DapStepOver<cr>", "DAP Step Over"},
             ["<F7>"] = {"<cmd>DapStepInto<cr>", "DAP Step Into"},
             ["<F8>"] = {"<cmd>DapStepOut<cr>", "DAP Step Out"},

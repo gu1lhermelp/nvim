@@ -27,6 +27,7 @@ return {
 				"markdown",
 				"markdown_inline",
                 "dockerfile",
+                "bash",
 			},
 			sync_install = false,
 			auto_install = true,

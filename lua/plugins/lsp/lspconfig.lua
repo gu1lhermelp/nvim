@@ -27,5 +27,9 @@ return {
         lspconfig.cmake.setup({
             capabilities=capabilities,
         })
+        lspconfig.bashls.setup({
+            capabilities=capabilities,
+            filetypes={"sh", "bats"},
+        })
     end,
 }
