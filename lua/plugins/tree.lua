@@ -11,7 +11,7 @@ return {
                         folder = false,
                         folder_arrow = false,
                         git = true,
-                        modified = true,
+                        modified = false,
                     }
                 }
             }
